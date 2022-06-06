@@ -33,8 +33,8 @@ def main():
     aspect_ratio = 16.0 / 9.0
     image_width = 400
     image_height = int(image_width / aspect_ratio)
-    samples_per_pixel = 10
-    max_depth = 5
+    samples_per_pixel = 20
+    max_depth = 10
 
     # World
     objects = []
