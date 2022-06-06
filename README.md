@@ -2,4 +2,10 @@
 
 ![Render](image.png)
 
-100%|##########| 225/225 [11:02<00:00,  2.95s/it]
+Resolution: 480x270
+
+Samples per pixel: 20
+
+Max recursion depth: 10
+
+Render time: 01m:09s

@@ -33,8 +33,8 @@ def main():
     # Image
     image_width = 480
     image_height = int(image_width / ASPECT_RATIO)
-    samples_per_pixel = 4
-    max_depth = 2
+    samples_per_pixel = 20
+    max_depth = 10
 
     # World
     objects = []
