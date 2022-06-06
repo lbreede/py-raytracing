@@ -1,3 +1,6 @@
+from math import sqrt
+
+
 def write_color(pixel_color, samples_per_pixel):
     r = pixel_color.x
     g = pixel_color.y
@@ -5,9 +8,9 @@ def write_color(pixel_color, samples_per_pixel):
 
     scale = 1.0 / samples_per_pixel
 
-    r *= scale
-    g *= scale
-    b *= scale
+    r = sqrt(r * scale)
+    g = sqrt(g * scale)
+    b = sqrt(b * scale)
 
     ir = 256 * clamp(r, 0.0, 0.999)
     ig = 256 * clamp(g, 0.0, 0.999)

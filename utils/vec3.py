@@ -57,6 +57,9 @@ class Vec3:
     def unit_vector(self):
         return self / self.length()
 
+    def __neg__(self):
+        return self * -1
+
 
 def random_in_unit_sphere():
     while True:
@@ -64,6 +67,18 @@ def random_in_unit_sphere():
         if p.length_squared() >= 1:
             continue
         return p
+
+
+def random_unit_vector():
+    return random_in_unit_sphere().unit_vector()
+
+
+def random_in_hemisphere(normal):
+    in_unit_sphere = random_in_unit_sphere()
+    if in_unit_sphere.dot(normal) > 0:
+        return in_unit_sphere
+    else:
+        return -in_unit_sphere
 
 
 Point3 = Vec3
