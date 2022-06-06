@@ -1,5 +1,5 @@
-from vec3 import Point3, Vec3
-from ray import Ray
+from utils.vec3 import Point3, Vec3
+from utils.ray import Ray
 
 
 class Camera:

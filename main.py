@@ -1,14 +1,15 @@
-from hittable_list import HittableList
-from vec3 import Point3, Vec3, Color, random_in_unit_sphere
-from ray import Ray
-from hittable import HitRecord
-
-from color import write_color
-
-from sphere import Sphere
-from camera import Camera
-from random import random
 from tqdm import trange
+from random import random
+
+from utils.sphere import Sphere
+from utils.vec3 import Point3
+from utils.vec3 import Color
+from utils.vec3 import random_in_unit_sphere
+from utils.hittable_list import HittableList
+from utils.camera import Camera
+from utils.hittable import HitRecord
+from utils.color import write_color
+from utils.ray import Ray
 
 
 def ray_color(r, world, depth):
@@ -20,6 +21,7 @@ def ray_color(r, world, depth):
     if world.hit(r, 0, float("inf"), rec):
         target = rec.p + rec.normal + random_in_unit_sphere()
         return 0.5 * ray_color(Ray(rec.p, target - rec.p), world, depth - 1)
+
     unit_direction = r.direction.unit_vector()
     t = 0.5 * (unit_direction.y + 1.0)
     return (1.0 - t) * Color(1.0, 1.0, 1.0) + t * Color(0.5, 0.7, 1.0)
@@ -31,8 +33,8 @@ def main():
     aspect_ratio = 16.0 / 9.0
     image_width = 400
     image_height = int(image_width / aspect_ratio)
-    samples_per_pixel = 25
-    max_depth = 12
+    samples_per_pixel = 10
+    max_depth = 5
 
     # World
     objects = []

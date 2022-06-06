@@ -1,2 +1,3 @@
-# py-raytracing
-Ray Tracing in One Weekend in Python
+# Ray Tracing in One Weekend in Python
+
+![Render](image.png)

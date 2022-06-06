@@ -1,4 +1,4 @@
-from hittable import HitRecord
+from utils.hittable import HitRecord
 
 
 class HittableList:
